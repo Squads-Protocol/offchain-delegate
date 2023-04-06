@@ -1,0 +1,45 @@
+Arguments: 
+  /usr/local/bin/node /opt/homebrew/bin/yarn install
+
+PATH: 
+  /Applications/Postgres.app/Contents/Versions/latest/bin:/opt/homebrew/opt/python/libexec/bin:/Users/vovacodes/.deno/bin:/Users/vovacodes/.avm/bin:/Users/vovacodes/.local/share/solana/install/active_release/bin:/usr/local/opt/openssl@1.1/bin:/Users/vovacodes/.local/share/solana/install/active_release/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/vovacodes/.cargo/bin:/Users/vovacodes/dev/crypto/squads/v4/node_modules/.bin:/usr/local/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.15.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)
+
+npm manifest: 
+  {
+      "scripts": {
+          "lint:fix": "prettier */*.js \"*/**/*{.js,.ts}\" -w",
+          "lint": "prettier */*.js \"*/**/*{.js,.ts}\" --check"
+      },
+      "dependencies": {
+          "@coral-xyz/anchor": "^0.27.0"
+      },
+      "devDependencies": {
+          "chai": "^4.3.4",
+          "mocha": "^9.0.3",
+          "ts-mocha": "^10.0.0",
+          "@types/bn.js": "^5.1.0",
+          "@types/chai": "^4.3.0",
+          "@types/mocha": "^9.0.0",
+          "typescript": "^4.3.5",
+          "prettier": "^2.6.2"
+      }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
