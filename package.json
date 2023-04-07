@@ -1,5 +1,10 @@
 {
+    "private": true,
+    "workspaces": [
+        "sdk/*"
+    ],
     "scripts": {
+        "test": "turbo run build && anchor test",
         "lint:fix": "prettier */*.js \"*/**/*{.js,.ts}\" -w",
         "lint": "prettier */*.js \"*/**/*{.js,.ts}\" --check"
     },
@@ -7,12 +12,13 @@
         "@coral-xyz/anchor": "^0.27.0"
     },
     "devDependencies": {
-        "mocha": "10.2.0",
         "@types/bn.js": "^5.1.0",
         "@types/chai": "^4.3.0",
         "@types/mocha": "^10.0.1",
+        "mocha": "10.2.0",
+        "prettier": "^2.6.2",
         "ts-node": "10.9.1",
-        "typescript": "4.9.4",
-        "prettier": "^2.6.2"
+        "turbo": "^1.8.8",
+        "typescript": "4.9.4"
     }
 }

@@ -9,7 +9,7 @@ url = "https://api.apr.dev"
 
 [provider]
 cluster = "Localnet"
-wallet = "/Users/vovacodes/.config/solana/id.json"
+wallet = "./.keys/upgrade-authority.json"
 
 [scripts]
 test = "npx mocha --node-option require=ts-node/register --extension ts -t 1000000 tests/**/*.ts"

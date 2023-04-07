@@ -1,0 +1,129 @@
+{
+  "version": "0.1.0",
+  "name": "offchain_delegate",
+  "instructions": [
+    {
+      "name": "delegateAdd",
+      "accounts": [
+        {
+          "name": "account",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "delegate",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rentPayer",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "This can be the `account` itself, but it doesn't have to be."
+          ]
+        },
+        {
+          "name": "delegateToken",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "expires",
+          "type": {
+            "option": "u32"
+          }
+        }
+      ]
+    },
+    {
+      "name": "delegateRemove",
+      "accounts": [
+        {
+          "name": "account",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "delegate",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rentCollector",
+          "isMut": true,
+          "isSigner": false,
+          "docs": [
+            "This can be the `account` itself, but it doesn't have to be."
+          ]
+        },
+        {
+          "name": "delegateToken",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "DelegateToken",
+      "docs": [
+        "PDA seeds:",
+        "[\"delegate_token\", account, delegate]"
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "account",
+            "docs": [
+              "The public key of the delegating account."
+            ],
+            "type": "publicKey"
+          },
+          {
+            "name": "delegate",
+            "docs": [
+              "The public key authorized to perform off-chain operations on behalf of the `account`."
+            ],
+            "type": "publicKey"
+          },
+          {
+            "name": "expires",
+            "docs": [
+              "The Unix time (in seconds since the Unix epoch) when the token should expire."
+            ],
+            "type": "u32"
+          },
+          {
+            "name": "bump",
+            "docs": [
+              "The PDA bump."
+            ],
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "address": "oCDofJsKeaWoyXWCtEY6vXgxvAdkmUdbXBRsedvUWkx",
+    "origin": "anchor",
+    "binaryVersion": "0.27.0",
+    "libVersion": "0.27.0"
+  }
+}
